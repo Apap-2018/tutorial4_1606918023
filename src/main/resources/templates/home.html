@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Home</title>
+	</head>
+	<body>
+		<h2>Hello!</h2>
+		
+		<h3>Tambah Pilot</h3>
+		<td><a th:href="@{/pilot/add}">Tambah</a></td>
+		<h3 th:text="'-----------------------------------------'"></h3>
+		<h3>Cari Pilot berdasarkan Nomor Lisensi</h3>
+		<form th:action="@{/pilot/view}" method="GET">
+			License Number: <br>
+			<input type="text" name="licenseNumber" />
+			<button type="submit">Cari</button>
+		</form>
+		
+		<h3>Cari Flight berdasarkan ID</h3>
+		<form th:action="@{/flight/view}" method="GET">
+			ID: <br>
+			<input type="text" name="id" />
+			<button type="submit">Cari</button>
+		</form>
+		<h3 th:text="'-----------------------------------------'"></h3>
+		<h3>Hapus Pilot berdasarkan Nomor Lisensi</h3>
+		<form th:action="@{/pilot/delete}" method="GET">
+			License Number: <br>
+			<input type="text" name="licenseNumber" />
+			<button type="submit">Hapus</button>
+		</form>
+		
+		<h3>Hapus Flight berdasarkan ID</h3>
+		<form th:action="@{/flight/delete}" method="GET">
+			ID: <br>
+			<input type="text" name="id" />
+			<button type="submit">Hapus</button>
+		</form>
+		<h3 th:text="'-----------------------------------------'"></h3>
+		<h3>Perbaharui Pilot berdasarkan Nomor Lisensi</h3>
+		<form th:action="@{/pilot/update}" method="GET">
+			License Number: <br>
+			<input type="text" name="licenseNumber" />
+			<button type="submit">Perbaharui</button>
+		</form>
+		
+		<h3>Perbaharui Flight berdasarkan ID</h3>
+		<form th:action="@{/flight/update}" method="GET">
+			ID: <br>
+			<input type="text" name="id" />
+			<button type="submit">Perbaharui</button>
+		</form>
+	</body>
+</html>
